@@ -28,6 +28,7 @@
 
 # TypeScript and tooling caches
 *.tsbuildinfo
+next-env.d.ts
 .eslintcache
 .stylelintcache
 .turbo/
