@@ -27,9 +27,9 @@ img { display: block; }
 .intro-reveal::before { content: ""; position: absolute; inset: -20%; background: radial-gradient(circle at 50% 46%, rgba(185,169,143,.12), transparent 34%); pointer-events: none; }
 .intro-reveal__lockup { position: relative; display: grid; width: min(610px, calc(100vw - 56px)); justify-items: center; }
 .intro-reveal__eyebrow { margin: 0 0 clamp(20px, 3vh, 34px); color: #a9a197; font-size: 8px; letter-spacing: .34em; text-transform: uppercase; opacity: 0; transform: translateY(10px); }
-.intro-reveal__mark { display: flex; align-items: baseline; justify-content: center; gap: clamp(7px, 1vw, 15px); font-family: var(--display); font-size: clamp(106px, 15vw, 224px); font-weight: 300; line-height: .62; letter-spacing: -.08em; }
-.intro-reveal__letter-frame { display: inline-block; padding: .08em .02em .14em; overflow: hidden; }
-.intro-reveal__letter { display: inline-block; transform: translateY(115%); }
+.intro-reveal__mark { display: flex; align-items: center; justify-content: center; gap: clamp(7px, 1vw, 15px); font-family: var(--display); font-size: clamp(106px, 15vw, 224px); font-weight: 300; line-height: .82; letter-spacing: -.08em; }
+.intro-reveal__letter-frame { display: inline-block; padding: .04em .02em .08em; overflow: visible; }
+.intro-reveal__letter { display: inline-block; opacity: 0; transform: translateY(32px); }
 .intro-reveal__rule { display: block; width: min(430px, 72vw); height: 1px; margin-top: clamp(25px, 4vh, 42px); background: linear-gradient(90deg, transparent, var(--champagne) 18%, var(--champagne) 82%, transparent); transform: scaleX(0); }
 .intro-reveal__atelier { margin: 18px 0 0; padding-left: .5em; font-size: 8px; letter-spacing: .58em; text-transform: uppercase; opacity: 0; transform: translateY(8px); }
 .intro-reveal__corner { position: absolute; margin: 0; color: #827b72; font-size: 7px; letter-spacing: .24em; text-transform: uppercase; opacity: 0; transform: translateY(7px); }

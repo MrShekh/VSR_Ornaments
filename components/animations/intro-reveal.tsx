@@ -25,67 +25,77 @@ export function IntroReveal() {
     }
 
     document.body.style.overflow = "hidden";
+    let cancelled = false;
+    let context: ReturnType<typeof gsap.context> | undefined;
 
-    const context = gsap.context(() => {
-      const timeline = gsap.timeline({ onComplete: finish });
+    const startAnimation = () => {
+      if (cancelled) return;
 
-      timeline
-        .to(".intro-reveal__eyebrow", {
-          y: 0,
-          opacity: 1,
-          duration: 0.48,
-          ease: "power3.out",
-        })
-        .to(
-          ".intro-reveal__letter",
-          {
-            yPercent: 0,
-            duration: 0.9,
-            stagger: 0.09,
-            ease: "power4.out",
-          },
-          0.14,
-        )
-        .to(
-          ".intro-reveal__rule",
-          {
-            scaleX: 1,
-            duration: 0.75,
-            ease: "power3.inOut",
-          },
-          0.48,
-        )
-        .to(
-          ".intro-reveal__atelier, .intro-reveal__corner",
-          {
+      context = gsap.context(() => {
+        const timeline = gsap.timeline({ onComplete: finish });
+
+        timeline
+          .to(".intro-reveal__eyebrow", {
             y: 0,
             opacity: 1,
-            duration: 0.5,
-            stagger: 0.05,
+            duration: 0.48,
             ease: "power3.out",
-          },
-          0.72,
-        )
-        .to(".intro-reveal__lockup", {
-          y: -14,
-          opacity: 0,
-          duration: 0.48,
-          ease: "power2.in",
-        }, "+=0.42")
-        .to(".intro-reveal__corner", {
-          opacity: 0,
-          duration: 0.28,
-          ease: "power2.in",
-        }, "<")
-        .to(root, {
-          clipPath: "inset(0 0 100% 0)",
-          duration: 1.02,
-          ease: "power4.inOut",
-        });
-    }, root);
+          })
+          .to(
+            ".intro-reveal__letter",
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.72,
+              stagger: 0.08,
+              ease: "power4.out",
+            },
+            0.14,
+          )
+          .to(
+            ".intro-reveal__rule",
+            {
+              scaleX: 1,
+              duration: 0.75,
+              ease: "power3.inOut",
+            },
+            0.48,
+          )
+          .to(
+            ".intro-reveal__atelier, .intro-reveal__corner",
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.05,
+              ease: "power3.out",
+            },
+            0.72,
+          )
+          .to(".intro-reveal__lockup", {
+            y: -12,
+            opacity: 0,
+            duration: 0.52,
+            ease: "power2.in",
+          }, "+=0.85")
+          .to(".intro-reveal__corner", {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.in",
+          }, "<")
+          .to(root, {
+            clipPath: "inset(0 0 100% 0)",
+            duration: 1.02,
+            ease: "power4.inOut",
+          });
+      }, root);
+    };
+
+    void document.fonts.ready.then(startAnimation);
 
     return () => {
-      context.revert();
+      cancelled = true;
+      context?.revert();
       document.body.style.overflow = previousOverflow;
     };
   }, []);
