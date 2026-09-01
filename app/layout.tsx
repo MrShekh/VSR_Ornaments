@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { CustomCursor } from "@/components/layout/custom-cursor";
+import { IntroReveal } from "@/components/animations/intro-reveal";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body>
+        <IntroReveal />
         <a className="skip-link" href="#main-content">Skip to content</a>
         <SmoothScroll />
         <Header />
