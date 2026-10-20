@@ -43,7 +43,7 @@ export function IntroReveal() {
             ease: "power3.out",
           })
           .to(
-            ".intro-reveal__brand",
+            ".intro-reveal__brand .brand-mark__emblem",
             {
               y: 0,
               opacity: 1,
@@ -51,6 +51,16 @@ export function IntroReveal() {
               ease: "power4.out",
             },
             0.14,
+          )
+          .to(
+            ".intro-reveal__brand .brand-mark__text",
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.78,
+              ease: "power4.out",
+            },
+            0.34,
           )
           .to(
             ".intro-reveal__rule",
@@ -62,7 +72,7 @@ export function IntroReveal() {
             0.48,
           )
           .to(
-            ".intro-reveal__atelier, .intro-reveal__corner",
+            ".intro-reveal__corner",
             {
               y: 0,
               opacity: 1,
