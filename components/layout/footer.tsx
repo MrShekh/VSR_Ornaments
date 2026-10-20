@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Camera, MessagesSquare, MoveUpRight } from "lucide-react";
+import { BrandMark } from "@/components/brand/brand-mark";
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__top">
         <div className="site-footer__brand">
-          <p className="footer-wordmark">VSR <span>ATELIER</span></p>
+          <BrandMark className="brand-mark--footer" />
           <p>Objects of lasting beauty, shaped in India and made to travel through generations.</p>
           <div className="site-footer__socials">
             <a href="#" aria-label="Instagram"><Camera size={16} strokeWidth={1.2} /></a>
@@ -29,12 +30,14 @@ export function Footer() {
         </div>
         <div>
           <p className="meta-label">Visit</p>
-          <p>By private appointment<br />Mumbai · New Delhi</p>
+          <p>08 Mandaliya Chamber, 2nd Floor<br />Juni Gadhiwad, Soni Bajar, Rajkot</p>
+          <a href="tel:+918905606489">+91 89056 06489</a>
+          <a href="mailto:info@vsrornaments.com">info@vsrornaments.com</a>
           <Link href="/contact" className="footer-visit">Arrange a visit <MoveUpRight size={13} /></Link>
         </div>
       </div>
       <div className="site-footer__bottom">
-        <span>© VSR Atelier 2026</span>
+        <span>© VSR Ornaments Pvt. Ltd. 2026</span>
         <span>India / INR</span>
         <div><Link href="#">Privacy</Link><Link href="#">Terms</Link></div>
       </div>

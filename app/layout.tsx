@@ -21,14 +21,14 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vsratelier.example"),
-  title: { default: "VSR Atelier — Fine Jewellery, Shaped by Light", template: "%s — VSR Atelier" },
+  metadataBase: new URL("https://www.vsrornaments.com"),
+  title: { default: "VSR Ornaments — Fine Jewellery, Shaped by Light", template: "%s — VSR Ornaments" },
   description: "An independent fine jewellery house creating objects of lasting beauty through light, form and exceptional Indian craftsmanship.",
   openGraph: {
-    title: "VSR Atelier — Fine Jewellery, Shaped by Light",
+    title: "VSR Ornaments — Fine Jewellery, Shaped by Light",
     description: "Objects of lasting beauty, crafted with intention.",
     type: "website",
-    images: [{ url: "/images/campaign-hero.png", width: 1728, height: 864 }],
+    images: [{ url: "/images/campaign-hero-cream-v2.png", width: 1695, height: 928 }],
   },
   twitter: { card: "summary_large_image" },
 };

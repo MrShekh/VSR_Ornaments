@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const product = getProduct(slug);
-  return { title: product.name, description: `${product.name} in ${product.material}, handcrafted by VSR Atelier.` };
+  return { title: product.name, description: `${product.name} in ${product.material}, handcrafted by VSR Ornaments.` };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -23,9 +23,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: `https://vsratelier.example${getProductImage(product.spriteIndex).src}`,
+    image: `https://www.vsrornaments.com${getProductImage(product.spriteIndex).src}`,
     description: `${product.name}, handcrafted in ${product.material}.`,
-    brand: { "@type": "Brand", name: "VSR Atelier" },
+    brand: { "@type": "Brand", name: "VSR Ornaments" },
     offers: { "@type": "Offer", priceCurrency: "INR", price: product.price.replace(/[^0-9]/g, ""), availability: "https://schema.org/InStock" },
   };
 
@@ -35,9 +35,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <div className="pdp">
         <div className="pdp-gallery">
           <div className="pdp-gallery__item"><ProductImage index={product.spriteIndex} priority sizes="(max-width: 768px) 92vw, 62vw" /></div>
-          <div className="pdp-gallery__item pdp-gallery__item--campaign"><Image src="/images/campaign-ring.png" alt={`${product.name} worn`} fill sizes="31vw" /></div>
+          <div className="pdp-gallery__item pdp-gallery__item--campaign"><Image src="/images/campaign-ring-cream-v2.png" alt={`${product.name} worn`} fill sizes="31vw" /></div>
           <div className="pdp-gallery__item"><ProductImage index={product.spriteIndex} sizes="(max-width: 768px) 92vw, 31vw" /></div>
-          <div className="pdp-gallery__item pdp-gallery__item--campaign"><Image src="/images/craftsmanship.png" alt={`${product.name} being finished by hand`} fill sizes="31vw" /></div>
+          <div className="pdp-gallery__item pdp-gallery__item--campaign"><Image src="/images/craftsmanship-cream-v2.png" alt={`${product.name} being finished by hand`} fill sizes="31vw" /></div>
           <div className="pdp-gallery__item"><ProductImage index={product.spriteIndex} sizes="(max-width: 768px) 92vw, 31vw" /></div>
         </div>
         <aside className="pdp-info">

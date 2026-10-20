@@ -3,7 +3,7 @@ import { Catalog } from "@/components/product/catalog";
 
 export const metadata: Metadata = {
   title: "Fine Jewellery",
-  description: "Explore rings, earrings, necklaces and bracelets from VSR Atelier.",
+  description: "Explore rings, earrings, necklaces and bracelets from VSR Ornaments.",
 };
 
 export default function CollectionsPage() {

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { BrandMark } from "@/components/brand/brand-mark";
 
 export function IntroReveal() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -42,12 +43,11 @@ export function IntroReveal() {
             ease: "power3.out",
           })
           .to(
-            ".intro-reveal__letter",
+            ".intro-reveal__brand",
             {
               y: 0,
               opacity: 1,
-              duration: 0.72,
-              stagger: 0.08,
+              duration: 0.78,
               ease: "power4.out",
             },
             0.14,
@@ -108,15 +108,8 @@ export function IntroReveal() {
         <p className="intro-reveal__corner intro-reveal__corner--top">Fine jewellery / India</p>
         <div className="intro-reveal__lockup">
           <p className="intro-reveal__eyebrow">A study in light and form</p>
-          <div className="intro-reveal__mark" aria-label="VSR">
-            {"VSR".split("").map((letter) => (
-              <span className="intro-reveal__letter-frame" key={letter}>
-                <span className="intro-reveal__letter">{letter}</span>
-              </span>
-            ))}
-          </div>
+          <BrandMark className="brand-mark--intro intro-reveal__brand" />
           <span className="intro-reveal__rule" />
-          <p className="intro-reveal__atelier">Atelier</p>
         </div>
         <p className="intro-reveal__corner intro-reveal__corner--bottom">Objects of lasting beauty</p>
       </div>

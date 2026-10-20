@@ -11,9 +11,9 @@ import { products } from "@/data/products";
 const schema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "VSR Atelier",
-  url: "https://vsratelier.example",
-  logo: "https://vsratelier.example/images/campaign-hero.png",
+  name: "VSR Ornaments",
+  url: "https://www.vsrornaments.com",
+  logo: "https://www.vsrornaments.com/brand/vsr-logo-exact.png",
   description: "Independent fine jewellery house shaped by light, form and Indian craftsmanship.",
 };
 
@@ -26,8 +26,8 @@ export function HomePage() {
       <section className="hero">
         <div className="hero-media">
           <Image
-            src="/images/campaign-hero.png"
-            alt="VSR Atelier model wearing the sculptural Arc diamond necklace"
+            src="/images/campaign-hero-cream-v2.png"
+            alt="VSR Ornaments model wearing the sculptural Arc diamond necklace"
             fill
             priority
             sizes="100vw"
@@ -47,7 +47,7 @@ export function HomePage() {
       <section className="category-pair" id="categories">
         <Link href="/collections?category=rings" className="category-panel" data-cursor="DISCOVER">
           <div className="category-panel__image" data-image-reveal>
-            <Image src="/images/campaign-ring.png" alt="Oval diamond engagement ring" fill sizes="(max-width: 768px) 100vw, 50vw" />
+            <Image src="/images/campaign-ring-cream-v2.png" alt="Oval diamond engagement ring" fill sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div className="category-panel__copy">
             <p>01 / Engagement</p><h2>RINGS OF<br /><em>INTENTION</em></h2><span>Discover ↗</span>
@@ -55,7 +55,7 @@ export function HomePage() {
         </Link>
         <Link href="/collections?category=earrings" className="category-panel category-panel--dark" data-cursor="DISCOVER">
           <div className="category-panel__image" data-image-reveal>
-            <Image src="/images/campaign-earring.png" alt="Diamond drop earring in profile" fill sizes="(max-width: 768px) 100vw, 50vw" />
+            <Image src="/images/campaign-earring-cream-v2.png" alt="Diamond drop earring in profile" fill sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div className="category-panel__copy category-panel__copy--light">
             <p>02 / High jewellery</p><h2>DIAMONDS<br /><em>IN MOTION</em></h2><span>Discover ↗</span>
@@ -81,9 +81,9 @@ export function HomePage() {
       <section className="manifesto section-space">
         <p className="eyebrow" data-reveal>THE VSR PERSPECTIVE</p>
         <div className="manifesto__lines">
-          <div className="manifesto-line" data-reveal>JEWELLERY IS NOT ONLY <span className="inline-image"><Image src="/images/campaign-ring.png" alt="" fill /></span> AN OBJECT.</div>
+          <div className="manifesto-line" data-reveal>JEWELLERY IS NOT ONLY <span className="inline-image"><Image src="/images/campaign-ring-cream-v2.png" alt="" fill sizes="8vw" /></span> AN OBJECT.</div>
           <div className="manifesto-line" data-reveal>IT IS A MEMORY HELD IN FORM,</div>
-          <div className="manifesto-line" data-reveal>AN INTIMATE LANGUAGE OF <span className="inline-image inline-image--cool"><Image src="/images/campaign-earring.png" alt="" fill /></span> LIGHT,</div>
+          <div className="manifesto-line" data-reveal>AN INTIMATE LANGUAGE OF <span className="inline-image inline-image--cool"><Image src="/images/campaign-earring-cream-v2.png" alt="" fill sizes="8vw" /></span> LIGHT,</div>
           <div className="manifesto-line" data-reveal>CRAFTED TO OUTLIVE THE MOMENT.</div>
         </div>
         <p className="manifesto__note" data-reveal>Every proportion is considered. Every stone is selected. Every surface is finished by hand.</p>
@@ -91,13 +91,13 @@ export function HomePage() {
 
       <section className="editorial-collage section-space">
         <div className="collage-image collage-image--left" data-parallax="36" data-image-reveal>
-          <Image src="/images/campaign-earring.png" alt="Diamond earring study" fill sizes="28vw" />
+          <Image src="/images/campaign-earring-cream-v2.png" alt="Diamond earring study" fill sizes="28vw" />
         </div>
         <div className="collage-image collage-image--center" data-parallax="22" data-image-reveal data-cursor="VIEW">
-          <Image src="/images/campaign-ring.png" alt="Diamond ring campaign" fill sizes="42vw" />
+          <Image src="/images/campaign-ring-cream-v2.png" alt="Diamond ring campaign" fill sizes="42vw" />
         </div>
         <div className="collage-image collage-image--right" data-parallax="-42" data-image-reveal>
-          <Image src="/images/campaign-hero.png" alt="Sculptural diamond necklace" fill sizes="30vw" />
+          <Image src="/images/campaign-hero-cream-v2.png" alt="Sculptural diamond necklace" fill sizes="30vw" />
         </div>
         <p className="eyebrow collage-kicker">FORM / LIGHT / BALANCE</p>
         <h2 className="collage-title" data-reveal>THE ART<br /><em>OF FORM</em></h2>
@@ -113,14 +113,14 @@ export function HomePage() {
           <h2>A WORLD<br /><em>OF JEWELLERY</em></h2>
         </div>
         <div className="house-section__image house-section__image--one" data-image-reveal data-parallax="34">
-          <Image src="/images/campaign-hero.png" alt="VSR Atelier house campaign" fill sizes="54vw" />
+          <Image src="/images/campaign-hero-cream-v2.png" alt="VSR Ornaments house campaign" fill sizes="54vw" />
         </div>
         <div className="house-section__copy" data-reveal>
           <p>Founded on the belief that restraint can hold extraordinary emotion, VSR brings Indian handcraft into a precise contemporary language.</p>
           <EditorialLink href="/about">The VSR story</EditorialLink>
         </div>
         <div className="house-section__image house-section__image--two" data-image-reveal data-parallax="-30">
-          <Image src="/images/campaign-earring.png" alt="Diamond earring portrait" fill sizes="30vw" />
+          <Image src="/images/campaign-earring-cream-v2.png" alt="Diamond earring portrait" fill sizes="30vw" />
         </div>
       </section>
 
@@ -128,7 +128,7 @@ export function HomePage() {
         <p className="campaign-word campaign-word--left">SIGNATURE</p>
         <p className="campaign-word campaign-word--right">COLLECTION</p>
         <div className="campaign-stage__image" data-image-reveal data-parallax="44">
-          <Image src="/images/campaign-noir.png" alt="The Signature Collection campaign" fill sizes="70vw" />
+          <Image src="/images/campaign-signature-cream-v2.png" alt="The Signature Collection campaign" fill sizes="70vw" />
         </div>
         <div className="campaign-stage__caption" data-reveal>
           <p className="eyebrow">VSR / Autumn 2026</p>
@@ -150,12 +150,12 @@ export function HomePage() {
       </section>
 
       <section className="bespoke-panel">
-        <Image src="/images/campaign-noir.png" alt="VSR Atelier bespoke jewellery" fill sizes="100vw" />
+        <Image src="/images/campaign-signature-cream-v2.png" alt="VSR Ornaments bespoke jewellery" fill sizes="100vw" />
         <div className="bespoke-panel__copy" data-reveal>
           <p className="eyebrow">Bespoke / Private commission</p>
           <h2>CREATED<br /><em>FOR ONE.</em></h2>
           <p>A singular piece, shaped around your stone, your story and the way you choose to wear it.</p>
-          <EditorialLink href="/bespoke" light>Begin your journey</EditorialLink>
+          <EditorialLink href="/bespoke">Begin your journey</EditorialLink>
         </div>
       </section>
 
@@ -173,7 +173,7 @@ export function HomePage() {
       </section>
 
       <section className="newsletter">
-        <Image src="/images/campaign-noir.png" alt="VSR Atelier private invitation" fill sizes="100vw" />
+        <Image src="/images/campaign-signature-cream-v2.png" alt="VSR Ornaments private invitation" fill sizes="100vw" />
         <div className="newsletter__inner" data-reveal>
           <p className="eyebrow">A private invitation</p>
           <h2>JOIN OUR WORLD.</h2>

@@ -11,7 +11,7 @@ const stages = [
     index: "01 / 04",
     title: "The first line",
     copy: "Every piece begins as a study of proportion—drawn, revised and reduced until only the essential remains.",
-    image: "/images/craftsmanship.png",
+    image: "/images/craftsmanship-cream-v2.png",
     position: "center",
   },
   {
@@ -25,14 +25,14 @@ const stages = [
     index: "03 / 04",
     title: "Set by hand",
     copy: "A master setter works at the scale of fractions, bringing metal and stone into a precise, quiet balance.",
-    image: "/images/craftsmanship.png",
+    image: "/images/craftsmanship-cream-v2.png",
     position: "left center",
   },
   {
     index: "04 / 04",
     title: "The final light",
     copy: "Every edge is softened, every surface finished, and every clasp tested before the piece leaves the atelier.",
-    image: "/images/campaign-ring.png",
+    image: "/images/campaign-ring-cream-v2.png",
     position: "center 62%",
   },
 ];
@@ -66,7 +66,7 @@ export function CraftsmanshipStory() {
           >
             <Image
               src={stage.image}
-              alt="VSR Atelier craftsmanship"
+              alt="VSR Ornaments craftsmanship"
               fill
               sizes="(max-width: 900px) 100vw, 58vw"
               style={{ objectFit: "cover", objectPosition: stage.position }}

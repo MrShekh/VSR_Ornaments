@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Search, ShoppingBag, UserRound, X } from "lucide-react";
 import { SearchOverlay } from "./search-overlay";
+import { BrandMark } from "@/components/brand/brand-mark";
 
 const primary = [
   ["Jewellery", "/collections"],
@@ -41,10 +42,8 @@ export function Header() {
           <div className="site-nav__group site-nav__group--left">
             {primary.map(([label, href]) => <Link href={href} key={label}>{label}</Link>)}
           </div>
-          <Link className="wordmark" href="/" aria-label="VSR Atelier home">
-            <small>FINE JEWELLERY HOUSE</small>
-            <strong>VSR</strong>
-            <span>ATELIER</span>
+          <Link className="wordmark" href="/" aria-label="VSR Ornaments home">
+            <BrandMark className="brand-mark--header" />
           </Link>
           <div className="site-nav__group site-nav__group--right">
             {secondary.map(([label, href]) => <Link href={href} key={label}>{label}</Link>)}
@@ -71,7 +70,7 @@ export function Header() {
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <button onClick={() => setMenuOpen(false)} aria-label="Close menu"><X size={25} strokeWidth={1.1} /></button>
-            <p className="eyebrow">VSR Atelier</p>
+            <p className="eyebrow">VSR Ornaments</p>
             <nav>
               {[...primary, ["Bespoke", "/bespoke"], ["Craftsmanship", "/craftsmanship"], ["Our Story", "/about"]].map(([label, href], index) => (
                 <motion.div key={label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 + index * 0.06 }}>
