@@ -6,7 +6,7 @@ import { EditorialLink } from "@/components/ui/editorial-link";
 import { ProductImage } from "@/components/product/product-image";
 import { ProductGrid } from "@/components/product/product-grid";
 import { CraftsmanshipStory } from "./craftsmanship-story";
-import { products } from "@/data/products";
+import { filterProducts, products } from "@/data/products";
 
 const schema = {
   "@context": "https://schema.org",
@@ -71,7 +71,7 @@ export function HomePage() {
         <div className="product-ribbon__track">
           {products.slice(0, 5).map((product) => (
             <Link href={`/product/${product.slug}`} key={product.slug} className="ribbon-piece" data-cursor="EXPLORE">
-              <ProductImage index={product.spriteIndex} />
+              <ProductImage product={product} />
               <span>{product.name}</span>
             </Link>
           ))}
@@ -141,12 +141,12 @@ export function HomePage() {
 
       <section className="signature section-space">
         <div className="signature__head" data-reveal>
-          <p className="eyebrow">Icons, considered slowly</p>
-          <h2>THE SIGNATURE<br /><em>COLLECTION</em></h2>
+          <p className="eyebrow">The latest edit</p>
+          <h2>NEW<br /><em>ARRIVALS</em></h2>
           <p>Forms created to transcend seasons and gather meaning over time.</p>
         </div>
-        <ProductGrid items={products.slice(0, 6)} compact />
-        <div className="signature__cta"><EditorialLink href="/collections">Explore the full collection</EditorialLink></div>
+        <ProductGrid items={filterProducts({ newOnly: true, sort: "new" })} compact />
+        <div className="signature__cta"><EditorialLink href="/collections?new=1&sort=new">Explore new arrivals</EditorialLink></div>
       </section>
 
       <section className="bespoke-panel">

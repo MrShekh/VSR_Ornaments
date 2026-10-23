@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Catalog } from "@/components/product/catalog";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function CollectionsPage() {
         <h1>FINE<br /><em>JEWELLERY</em></h1>
         <p>An exploration of form, light and craftsmanship—made in limited numbers and finished by hand.</p>
       </section>
-      <Catalog />
+      <Suspense fallback={<p className="catalog-loading">Loading jewellery…</p>}><Catalog /></Suspense>
     </main>
   );
 }

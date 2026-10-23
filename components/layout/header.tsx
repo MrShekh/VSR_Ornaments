@@ -10,7 +10,7 @@ import { BrandMark } from "@/components/brand/brand-mark";
 const primary = [
   ["Jewellery", "/collections"],
   ["Collections", "/collections"],
-  ["New Arrivals", "/collections?sort=new"],
+  ["New Arrivals", "/collections?new=1&sort=new"],
 ];
 const secondary = [
   ["Bespoke", "/bespoke"],
@@ -30,9 +30,9 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen || searchOpen ? "hidden" : "";
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [menuOpen, searchOpen]);
+  }, [menuOpen]);
 
   return (
     <>

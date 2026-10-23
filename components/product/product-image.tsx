@@ -1,53 +1,26 @@
 import Image from "next/image";
+import { getMetal, type Metal, type Product } from "@/data/products";
 
-const productImageAssets = [
-  {
-    src: "/images/products/arc-earrings-v2.png",
-    alt: "Sculptural platinum and diamond Arc earrings",
-  },
-  {
-    src: "/images/products/lumen-ring-v2.png",
-    alt: "Oval-cut diamond Lumen solitaire ring in platinum",
-  },
-  {
-    src: "/images/products/trace-pendant-v2.png",
-    alt: "Two-stone diamond Trace pendant in platinum",
-  },
-  {
-    src: "/images/products/line-bracelet-v2.png",
-    alt: "Platinum and diamond Line tennis bracelet",
-  },
-  {
-    src: "/images/products/axis-band-v2.png",
-    alt: "Architectural platinum and diamond Axis band",
-  },
-] as const;
-
-export function getProductImage(index: number) {
-  const safeIndex = ((index % productImageAssets.length) + productImageAssets.length) % productImageAssets.length;
-  return productImageAssets[safeIndex];
+export function getProductImage(product: Product, metal: Metal = "white") {
+  return `/images/products/${product.imageKey}-${metal}-gallery.png`;
 }
 
-export function ProductImage({
-  index,
-  priority = false,
-  className = "",
-  sizes = "(max-width: 768px) 75vw, 28vw",
-}: {
-  index: number;
+export function ProductImage({ product, metal = "white", view = "piece", priority = false, className = "", sizes = "(max-width: 760px) 100vw, (max-width: 1100px) 66vw, 50vw" }: {
+  product: Product;
+  metal?: Metal;
+  view?: "piece" | "model";
   priority?: boolean;
   className?: string;
   sizes?: string;
 }) {
-  const asset = getProductImage(index);
-
   return (
-    <div className={`product-crop ${className}`}>
+    <div className={`product-crop product-crop--${view} ${className}`}>
       <Image
-        src={asset.src}
-        alt={asset.alt}
-        fill
-        priority={priority}
+        src={getProductImage(product, metal)}
+        alt={`${product.name} in ${getMetal(metal).label.toLowerCase()}${view === "model" ? ", worn on a model" : ", close-up"}`}
+        width={2048}
+        height={1024}
+        loading={priority ? "eager" : "lazy"}
         sizes={sizes}
         quality={95}
         className="product-crop__image"

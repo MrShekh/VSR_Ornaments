@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 type ArtworkFragmentProps = {
   className?: string;
   x: number;
@@ -7,6 +9,7 @@ type ArtworkFragmentProps = {
 };
 
 function ArtworkFragment({ className, x, y, width, height }: ArtworkFragmentProps) {
+  const filterId = useId().replace(/:/g, "");
   return (
     <svg
       className={className}
@@ -16,8 +19,15 @@ function ArtworkFragment({ className, x, y, width, height }: ArtworkFragmentProp
       aria-hidden="true"
       focusable="false"
     >
-      {/* Independent viewports preserve the supplied lettering and gold finish. */}
-      <image href="/brand/vsr-logo-exact.png" width="447" height="401" />
+      <defs>
+        <filter id={filterId} x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+          {/* White has no chroma; gold's blue channel is lower. Remove only the
+              white matte in the artwork, independent of ancestor compositing. */}
+          <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 -1 0 1" />
+          <feComponentTransfer><feFuncA type="linear" slope="10" /></feComponentTransfer>
+        </filter>
+      </defs>
+      <image href="/brand/vsr-logo-exact.png" width="447" height="401" filter={`url(#${filterId})`} />
     </svg>
   );
 }
